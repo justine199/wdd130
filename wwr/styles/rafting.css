@@ -27,8 +27,13 @@ header, main, footer {
 
 /* Header area */
 header {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    padding: 1rem;
     background-color: var(--primary-color);
-    color: #fff; /* white text for strong contrast on dark green */
+    color: #fff;
+     /* white text for strong contrast on dark green */
 }
 
 /* Headings */
@@ -102,4 +107,20 @@ h1 {
     font-size: 14px;
     color: #e6f0ff; /* slightly darker than #f0f9ff for readability */
     line-height: 1.5;
+}
+nav ul {
+    display: flex;
+    gap: 1.5rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+nav a {
+    text-decoration: none;
+    color: (--accent2-color);
+    font-weight: bold;
+}
+header img {
+    max-width: 120px;
+    height: auto;
 }
