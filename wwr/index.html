@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>WWR Rafting — Home</title>
+    <meta name="description"
+        content="WWR Rafting — thrilling, safe whitewater rafting trips for families, groups, and adventurers. Sign up for our newsletter and explore trips." />
+    <link rel="stylesheet" href="styles/rafting.css" />
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="brand">
+            <img src="images/byui-logo.png" alt="BYU-Idaho logo" class="logo" />
+            <span class="site-title">WWR Rafting</span>
+        </div>
+
+        <nav class="main-nav" aria-label="Main navigation">
+            <ul>
+                <li><a href="index.html" aria-current="page">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="trips.html">Trips</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+
+
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero -->
+        <section class="hero" aria-labelledby="hero-heading">
+            <img src="images/" alt="" class="hero-image" />
+            <div class="hero-overlay">
+                <h1 id="hero-heading">Ride the Rapids — Safely &amp; Boldly</h1>
+                <p class="hero-sub">Guided whitewater adventures for all skill levels — bring your friends, bring your
+                    spirit.</p>
+                <p><a class="btn btn-primary" href="trips.html">Explore Trips</a></p>
+            </div>
+        </section>
+
+        <!-- CTA + Newsletter -->
+        <section class="signup-cta" aria-labelledby="signup-heading">
+            <div class="cta-inner">
+                <div class="cta-left">
+                    <h2 id="signup-heading">Join our newsletter</h2>
+                    <p>Get trip alerts, special discounts, and safety tips delivered to your inbox.</p>
+                </div>
+
+                <form class="newsletter" action="contact.html" method="get" novalidate>
+                    <label for="name">Name</label>
+                    <input id="name" name="name" type="text" required placeholder="Your name" />
+
+                    <label for="email">Email</label>
+                    <input id="email" name="email" type="email" required placeholder="you@example.com" />
+
+                    <button class="btn" type="submit">Subscribe</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- Grid: about / offerings -->
+        <section class="grid-overview" aria-labelledby="overview-heading">
+            <h2 id="overview-heading">What we offer</h2>
+
+            <div class="grid">
+                <article class="card">
+                    <img src="images/" alt="Guided rafting trip on a river" />
+                    <div class="card-content">
+                        <h3>Guided Trips</h3>
+                        <p>Experienced guides, safety-first instruction, and routes suited to beginners through experts.
+                        </p>
+                        <p><a href="trips.html" class="link">See trip options →</a></p>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <img src="https://via.placeholder.com/600x400?text=Equipment" alt="Rafts and safety equipment" />
+                    <div class="card-content">
+                        <h3>Top-Quality Equipment</h3>
+                        <p>Life jackets, helmets, and high-performance rafts maintained and inspected regularly.</p>
+                        <p><a href="about.html" class="link">Learn about safety →</a></p>
+                    </div>
+                </article>
+
+                <article class="card full">
+                    <img src="images/" alt="Rafting guides standing by a river" />
+                    <div class="card-content">
+                        <h3>Our Team &amp; Values</h3>
+                        <p>Local guides, rescue-trained staff, and a commitment to stewardship of the rivers we love.
+                        </p>
+                        <p class="quote">"Life is a journey, not a destination..." — President Thomas S. Monson</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Secondary CTA -->
+        <section class="secondary-cta">
+            <p>Ready for adventure? <a class="btn btn-ghost" href="trips.html">Browse our trips</a> or <a
+                    href="contact.html">contact us</a> for group bookings.</p>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <p>&copy; <span id="year"></span> 2025 🌴The Rapids Rafting Adventures🌴 | Justine Nenger</p>
+            <nav aria-label="Footer navigation">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="trips.html">Trips</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </footer>
+
+    <script>
+        // small script for footer year — accessible progressive enhancement
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+
+</html>

@@ -304,3 +304,130 @@ form button:hover,
     color: var(--accent1-color);
     font-weight: bold;
 }
+/* rafting.css
+   Single stylesheet for the WWR site.
+   Keep images optimized and pages under 500KB (use responsive images and compressed files).
+*/
+
+:root{
+  --primary:#055a05;
+  --accent:#b35a1f;
+  --muted:#666;
+  --bg:#ffffff;
+  --max-width:1100px;
+  --gap:1.25rem;
+  --radius:12px;
+  --heading-font:"Georgia", "Times New Roman", serif;
+  --body-font:Arial, Helvetica, sans-serif;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family:var(--body-font);
+  color:#222;
+  background:var(--bg);
+  line-height:1.45;
+}
+
+/* Header / Nav */
+.site-header{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:1rem;
+  padding:0.5rem 1rem;
+  border-bottom:4px solid #eee;
+  background:#fff;
+  position:sticky;
+  top:0;
+  z-index:20;
+}
+.brand{display:flex;align-items:center;gap:.5rem}
+.logo{height:44px;width:auto;display:inline-block}
+.site-title{font-weight:700;font-family:var(--heading-font)}
+.main-nav ul{
+  list-style:none;margin:0;padding:0;display:flex;gap:.5rem;flex-wrap:wrap;
+}
+.main-nav a{
+  display:inline-block;padding:.4rem .6rem;text-decoration:none;border-radius:6px;color:var(--primary);
+}
+.main-nav a[aria-current="page"]{background:var(--primary);color:#fff}
+
+/* Hero */
+.hero{position:relative;overflow:hidden;margin-bottom:var(--gap)}
+.hero-image{width:100%;height:auto;display:block;max-height:60vh;object-fit:cover}
+.hero-overlay{
+  position:absolute;left:0;top:0;width:100%;height:100%;
+  display:flex;flex-direction:column;justify-content:center;align-items:flex-start;
+  padding:2rem; color:#fff;
+  background:linear-gradient(180deg, rgba(0,0,0,0.35), rgba(0,0,0,0.5));
+}
+.hero-overlay h1{
+  margin:0 0 .5rem;font-size:clamp(1.6rem,4vw,3rem);font-family:var(--heading-font)
+}
+.hero-sub{margin:0 0 1rem}
+
+/* Buttons / Links */
+.btn{display:inline-block;padding:.6rem .9rem;border-radius:8px;text-decoration:none;border:0;background:transparent;color:var(--primary);cursor:pointer}
+.btn-primary{background:var(--accent);color:white}
+.btn-ghost{border:1px solid rgba(255,255,255,.2);color:white}
+
+/* Newsletter + CTA */
+.signup-cta{padding:var(--gap) 1rem;background:#f7f7f7}
+.cta-inner{max-width:var(--max-width);margin:0 auto;display:flex;gap:var(--gap);align-items:center;justify-content:space-between}
+.cta-left{flex:1;min-width:220px}
+.newsletter{display:flex;flex:1;gap:.5rem;align-items:center}
+.newsletter input{padding:.5rem;border:1px solid #ccc;border-radius:6px;flex:1}
+.newsletter label{display:none} /* visible labels are best for accessibility — for brevity we rely on placeholders; could use sr-only classes instead */
+
+/* Grid overview */
+.grid-overview{padding:var(--gap) 1rem}
+.grid-overview h2{text-align:center}
+.grid{max-width:var(--max-width);margin:1rem auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem}
+.card{background:white;border-radius:var(--radius);overflow:hidden;box-shadow:0 6px 18px rgba(0,0,0,0.06);display:flex;flex-direction:column}
+.card img{width:100%;height:auto;display:block;object-fit:cover}
+.card-content{padding:1rem}
+.card.full{grid-column:1/-1}
+
+/* Trips page layout */
+.trips-hero{padding:1.5rem;text-align:center;background:linear-gradient(180deg,#fff, #fff);border-bottom:1px solid #eee}
+.trip-list{max-width:var(--max-width);margin:1rem auto;padding:0 1rem;display:grid;gap:1.25rem}
+.trip{display:grid;grid-template-columns:1fr;gap:0.75rem;align-items:center}
+.trip img{width:100%;height:auto;border-radius:8px;display:block}
+.trip-content{background:#fff;padding:.75rem;border-radius:8px}
+.table-responsive{max-width:var(--max-width);margin:1rem auto;padding:0 1rem;overflow:auto}
+table{width:100%;border-collapse:collapse;background:#fff}
+thead th{background:#f2f2f2;text-align:left;padding:.6rem;border-bottom:2px solid #eee}
+tbody td{padding:.6rem;border-bottom:1px solid #eee}
+caption{caption-side:top;text-align:left;padding:.5rem 0;font-weight:600}
+
+/* Footer */
+.site-footer{border-top:1px solid #eee;background:#fafafa;padding:1rem 0;margin-top:1.5rem}
+.footer-inner{max-width:var(--max-width);margin:0 auto;display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:0 1rem}
+.footer-inner nav ul{display:flex;gap:.5rem}
+
+/* Utilities */
+.link{color:var(--primary);text-decoration:underline}
+.quote{font-style:italic;color:var(--muted)}
+
+/* Responsive tweaks */
+@media (min-width:820px){
+  .cta-inner{padding:1rem}
+  .newsletter{flex-direction:row}
+  .trip{grid-template-columns: 45% 55% }
+  .grid{grid-template-columns:repeat(3,1fr)}
+  .card.full{grid-column:auto}
+}
+@media (max-width:480px){
+  .main-nav ul{display:none} /* in production add hamburger menu */
+  .cta-inner{flex-direction:column;align-items:stretch}
+  .newsletter{flex-direction:column}
+  .hero-overlay{align-items:center;text-align:center}
+}
+
+/* Accessibility helpers (optional) */
+.visually-hidden{
+  position:absolute!important;height:1px;width:1px;overflow:hidden;clip:rect(1px,1px,1px,1px);white-space:nowrap;border:0;padding:0;margin:-1px
+}
